@@ -1,5 +1,5 @@
 function getMessages() {
-  fetch("blog-001-backe-i5uhpe:3000/messages", {
+  fetch("http://blog-001-backe-i5uhpe:3000/messages", {
     headers: {
       "Content-Type": "application/json",
       // 'Content-Type': 'application/x-www-form-urlencoded',
