@@ -47,7 +47,7 @@ async function postMessage(event) {
   let name = document.getElementById("inputName")?.value;
   let message = document.getElementById("inputMessage")?.value;
   if (name?.length > 0 && message?.length > 0) {
-    const response = await fetch("blog-001-backe-i5uhpe:3000/messages", {
+    const response = await fetch("http://blog-001-backe-i5uhpe:3000/messages", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
