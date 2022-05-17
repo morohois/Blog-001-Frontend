@@ -1,5 +1,5 @@
 function getMessages() {
-  fetch("http://blog-001-backe-i5uhpe:3000/messages", {
+  fetch("https://blog-001-backe-i5uhpe:3000/messages", {
     headers: {
       "Content-Type": "application/json",
       // 'Content-Type': 'application/x-www-form-urlencoded',
@@ -47,16 +47,19 @@ async function postMessage(event) {
   let name = document.getElementById("inputName")?.value;
   let message = document.getElementById("inputMessage")?.value;
   if (name?.length > 0 && message?.length > 0) {
-    const response = await fetch("http://blog-001-backe-i5uhpe:3000/messages", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        author: name,
-        message: message,
-      }),
-    });
+    const response = await fetch(
+      "https://blog-001-backe-i5uhpe:3000/messages",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          author: name,
+          message: message,
+        }),
+      }
+    );
     await response.json();
     getMessages();
   }
