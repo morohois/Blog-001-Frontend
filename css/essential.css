@@ -1,0 +1,32 @@
+.form-control:focus {
+  box-shadow: none;
+}
+
+.d-flex {
+  flex-shrink: 0;
+}
+
+body {
+  background-color: #f9f9f9;
+}
+
+.content-container {
+  max-width: 570px;
+  width: 100%;
+}
+
+.content-container .message-form {
+  background-color: white;
+  padding: 16px;
+}
+
+.content-container .messages .message {
+  background-color: white;
+  width: 100%;
+  max-width: 570px;
+}
+
+.tile-shadow {
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+/*# sourceMappingURL=essential.css.map */

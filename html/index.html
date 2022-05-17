@@ -1,25 +1,54 @@
 <!DOCTYPE html>
-<html>
-<head>
-<title>Welcome to nginx!</title>
-<style>
-    body {
-        width: 35em;
-        margin: 0 auto;
-        font-family: Tahoma, Verdana, Arial, sans-serif;
-    }
-</style>
-</head>
-<body>
-<h1>Welcome to nginx!</h1>
-<p>If you see this page, the nginx web server is successfully installed and
-working. Further configuration is required.</p>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog#001 - Frontend</title>
+    <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../css/essential.css" />
+  </head>
+  <body
+    class="d-flex flex-column justify-content-center align-items-center py-5"
+  >
+    <div class="content-container">
+      <h1 class="h3 mb-4">Message Center</h1>
+      <div class="message-form w-100 mb-3 tile-shadow rounded">
+        <h2 class="h4 mb-4">Create message</h2>
+        <form onsubmit="postMessage(event)" class="d-flex flex-column">
+          <div class="form-floating mb-3">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="name@example.com"
+              id="inputName"
+            />
+            <label for="inputName">Name</label>
+          </div>
 
-<p>For online documentation and support please refer to
-<a href="http://nginx.org/">nginx.org</a>.<br/>
-Commercial support is available at
-<a href="http://nginx.com/">nginx.com</a>.</p>
-
-<p><em>Thank you for using nginx.</em></p>
-</body>
+          <div class="form-floating">
+            <textarea
+              class="form-control"
+              placeholder="Leave a comment here"
+              style="height: 100px"
+              id="inputMessage"
+            ></textarea>
+            <label for="inputMessage">Comment</label>
+          </div>
+          <button class="btn btn-primary mt-3">Submit</button>
+        </form>
+      </div>
+      <div
+        class="messages d-flex flex-column w-100"
+        id="message-container"
+      ></div>
+    </div>
+    <script src="../js/message.service.js"></script>
+  </body>
 </html>
