@@ -20,36 +20,38 @@ function getMessages() {
     });
 }
 
-function appendMessages(messages) {
+async function appendMessages(messages) {
   let messageContainer = document.getElementById("message-container");
   messageContainer.innerHTML = "";
-  messages
-    .sort((prev, next) => {
-      if (Date(prev.created_at) < Date(next.created_at)) return 1;
-      return -1;
-    })
-    .then(() => {
-      for (message of messages) {
-        let messageElement = document.createElement("div");
-        messageElement.classList.add(
-          "message",
-          "p-3",
-          "d-flex",
-          "flex-column",
-          "mb-3",
-          "tile-shadow",
-          "rounded"
-        );
-        let author = document.createElement("span");
-        author.innerText = message?.author;
-        author.classList.add("fs-8", "fw-light", "mb-2");
-        let messageText = document.createElement("span");
-        messageText.innerText = message.message;
-        messageElement.appendChild(author);
-        messageElement.appendChild(messageText);
-        messageContainer.appendChild(messageElement);
-      }
-    });
+  console.log(messages);
+  await messages.sort((prev, next) => {
+    if (
+      new Date(prev.created_at).getTime() < new Date(next.created_at).getTime()
+    )
+      return 1;
+    return -1;
+  });
+  console.log(messages);
+  for (message of messages) {
+    let messageElement = document.createElement("div");
+    messageElement.classList.add(
+      "message",
+      "p-3",
+      "d-flex",
+      "flex-column",
+      "mb-3",
+      "tile-shadow",
+      "rounded"
+    );
+    let author = document.createElement("span");
+    author.innerText = message?.author;
+    author.classList.add("fs-8", "fw-light", "mb-2");
+    let messageText = document.createElement("span");
+    messageText.innerText = message.message;
+    messageElement.appendChild(author);
+    messageElement.appendChild(messageText);
+    messageContainer.appendChild(messageElement);
+  }
 }
 
 async function postMessage(event) {
