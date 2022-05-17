@@ -51,7 +51,7 @@ async function postMessage(event) {
   let message = document.getElementById("inputMessage")?.value;
   if (name?.length > 0 && message?.length > 0) {
     const response = await fetch(
-      "https://blog-001-backe-prod-clientservertest-49t92s.prod.mogenius.io:80/messages",
+      "https://blog-001-backe-prod-clientservertest-49t92s.prod.mogenius.io/messages",
       {
         method: "POST",
         headers: {
