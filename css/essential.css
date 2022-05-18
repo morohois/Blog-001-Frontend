@@ -30,3 +30,8 @@ body {
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 /*# sourceMappingURL=essential.css.map */
+
+/* Hier hintergrund ändern für message */
+.message-form {
+  background-color: red !important;
+}
